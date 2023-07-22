@@ -9,12 +9,11 @@ function App() {
   // };
   const [cities, setCities] = useState([])
   const apiKey = import.meta.env.VITE_API_KEY_OPENWEATHER
-  console.log(apiKey)
-  // const apiKey = "5f98359d67cfe82e22dab3e7b233c046"
-  // api.openweathermap.org/data/2.5/weather?q=Moscow&APPID=50b01156ec80f004ee3a74dde15beb91
+ 
+  
 
   function onSearch(ciudad) {
-    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${ciudad}&APPID=${apiKey}&units=metric`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&APPID=${apiKey}&units=metric`)
       .then(r => r.json())
       .then((recurso) => {
         if(recurso.main !== undefined){
